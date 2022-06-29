@@ -13,7 +13,7 @@ public class CuadratrackElectrica implements ICuadratrack {
     }
 
     @Override
-    public void estadoCombustible() {
-        cuadratrack.estadoElectricidad();
+    public int estadoCombustible() {
+        return cuadratrack.estadoElectricidad();
     }
 }

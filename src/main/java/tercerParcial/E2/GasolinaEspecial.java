@@ -13,15 +13,17 @@ public class GasolinaEspecial implements ICuadratrack {
     public void cargarCombustible() {
         // setea un atributo capacidad entre 0 - 50
         System.out.println("<<< Cargando gasolina especial >>>");
-        capacidad = new Random().nextInt(50);
+        capacidad = new Random().nextInt(50)+1; // devuelve numeros del 0-49
         System.out.println("Capacidad: " + capacidad);
         System.out.println();
     }
 
     @Override
-    public void estadoCombustible() {
+    public int estadoCombustible() {
         System.out.println("<<< Estado combustible >>>");
-        System.out.println("Estado: " + new Random().nextInt(50));
+        int estado = new Random().nextInt(49)+1; // devuelve numeros del 0-48
+        System.out.println("Estado: " + estado);
         System.out.println();
+        return estado;
     }
 }
