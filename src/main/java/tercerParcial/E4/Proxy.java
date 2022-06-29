@@ -1,5 +1,6 @@
 package tercerParcial.E4;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Proxy implements IServidor {
@@ -11,6 +12,7 @@ public class Proxy implements IServidor {
     public Proxy() {
         System.out.println("<<< Iniciando proxy y servidores >>>");
         System.out.println();
+        listUsers = new ArrayList<>();
         servidor1 = new Servidor1();
         servidor2 = new Servidor2();
     }
@@ -23,12 +25,13 @@ public class Proxy implements IServidor {
     public void userLogin(User user, String username, String pwd){
         if (username.equals(user.getUsername()) && pwd.equals(user.getPwd())){
             if (esPrimo(user.getId())){
-                servidor1.userLogin(user);
+                servidor1.userLogin(user, username, pwd);
             } else {
-                servidor2.userLogin(user);
+                servidor2.userLogin(user, username, pwd);
             }
         } else {
-            System.out.println("Datos incorrectos");
+            System.out.println("Datos incorrectos ---> " + username + ", " + pwd);
+            System.out.println();
         }
     }
 

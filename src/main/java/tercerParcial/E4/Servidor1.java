@@ -18,7 +18,7 @@ public class Servidor1 implements IServidor {
     @Override
     public void atenderUsuarios() {
         for (User user:listOfUsers) {
-            System.out.println("Servidor1 atendiendo a usuario " + user.getId());
+            System.out.println("Servidor1 atendiendo a usuario con id " + user.getId());
             user.showInfo();
         }
     }
