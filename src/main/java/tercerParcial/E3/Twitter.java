@@ -1,15 +1,15 @@
 package tercerParcial.E3;
 
-public class Facebook implements IRedSocial {
+public class Twitter implements IRedSocial {
     private ISistema sistema;
 
-    public Facebook(ISistema sistema) {
+    public Twitter(ISistema sistema) {
         this.sistema = sistema;
     }
 
     @Override
     public void mostrarDatos() {
-        System.out.println("<<< MOSTRANDO DATOS DEL SISTEMA MEDIANTE FACEBOOK >>>");
+        System.out.println("<<< MOSTRANDO DATOS DEL SISTEMA MEDIANTE TWITTER >>>");
         sistema.mostrarDatos();
     }
 }

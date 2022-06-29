@@ -1,5 +1,6 @@
 package tercerParcial.E3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SColegio implements ISistema {
@@ -8,13 +9,11 @@ public class SColegio implements ISistema {
     private List<Estudiante> estudiantes;
     private String requisitos;
 
-    private IRedSocial redSocial;
-
-    public SColegio(String nombre, int capacidad, String requisitos, IRedSocial redSocial) {
+    public SColegio(String nombre, int capacidad, String requisitos) {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.requisitos = requisitos;
-        this.redSocial = redSocial;
+        estudiantes = new ArrayList<>();
     }
 
     public void addEstudiante(Estudiante estudiante){
@@ -23,11 +22,6 @@ public class SColegio implements ISistema {
 
     @Override
     public void mostrarDatos() {
-        redSocial.mostrarDatos(this);
-    }
-
-    @Override
-    public void showInfo(){
         System.out.println("<<< MOSTRANDO DATOS DEL COLEGIO >>>");
         System.out.println("Nombre: " + nombre);
         System.out.println("Capacidad: " + capacidad);
@@ -36,5 +30,7 @@ public class SColegio implements ISistema {
             System.out.println("  - " + e.getNombre());
         }
         System.out.println("Requisitos: " + requisitos);
+        System.out.println();
     }
+
 }
